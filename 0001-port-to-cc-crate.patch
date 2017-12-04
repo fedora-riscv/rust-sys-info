@@ -1,0 +1,42 @@
+From b224a310f0260aff647347758b7d913cc20c3507 Mon Sep 17 00:00:00 2001
+From: Igor Gnatenko <i.gnatenko.brain@gmail.com>
+Date: Mon, 4 Dec 2017 00:32:37 +0100
+Subject: [PATCH] port to cc crate
+
+Signed-off-by: Igor Gnatenko <i.gnatenko.brain@gmail.com>
+---
+ build.rs | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/build.rs b/build.rs
+index c09ab88..04f2871 100644
+--- a/build.rs
++++ b/build.rs
+@@ -1,4 +1,4 @@
+-extern crate gcc;
++extern crate cc;
+ 
+ use std::env;
+ 
+@@ -6,13 +6,15 @@ fn main() {
+     let target = env::var("TARGET").unwrap();
+     let target_os = target.split('-').nth(2).unwrap();
+ 
++    let mut builder = cc::Build::new();
+     match target_os {
+-        "linux" => gcc::compile_library("libinfo.a", &["c/linux.c"]),
+-        "darwin" => gcc::compile_library("libinfo.a", &["c/macos.c"]),
++        "linux" => builder.file("c/linux.c"),
++        "darwin" => builder.file("c/macos.c"),
+         "windows" => {
+-            gcc::compile_library("libinfo.a", &["c/windows.c"]);
+             println!("cargo:rustc-flags=-l psapi");
++            builder.file("c/windows.c")
+         },
+         _ => panic!("Unsupported system")
+     };
++    builder.compile("info");
+ }
+-- 
+2.15.1
+
