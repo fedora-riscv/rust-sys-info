@@ -5,18 +5,13 @@
 %global crate sys-info
 
 Name:           rust-%{crate}
-Version:        0.5.3
+Version:        0.5.4
 Release:        1%{?dist}
 Summary:        Get system information in Rust
 
 License:        MIT
 URL:            https://crates.io/crates/sys-info
 Source0:        https://crates.io/api/v1/crates/%{crate}/%{version}/download#/%{crate}-%{version}.crate
-# Initial patched metadata
-# * Replace gcc with cc, https://github.com/FillZpp/sys-info-rs/pull/21
-Patch0:         sys-info-0.5.3-fix-metadata.diff
-# Finish gcc->cc
-Patch1:         0001-port-to-cc-crate.patch
 
 ExclusiveArch:  %{rust_arches}
 
@@ -62,5 +57,8 @@ which use %{crate} from crates.io.
 %{cargo_registry}/%{crate}-%{version}/
 
 %changelog
+* Mon Jan 01 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.4-1
+- Update to 0.5.4
+
 * Mon Dec 04 2017 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.3-1
 - Initial package
