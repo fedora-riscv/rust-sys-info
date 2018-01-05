@@ -5,7 +5,7 @@
 %global crate sys-info
 
 Name:           rust-%{crate}
-Version:        0.5.4
+Version:        0.5.5
 Release:        1%{?dist}
 Summary:        Get system information in Rust
 
@@ -63,6 +63,9 @@ which use %{crate} from crates.io.
 %{cargo_registry}/%{crate}-%{version}/
 
 %changelog
+* Fri Jan 05 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.5-1
+- Update to 0.5.5
+
 * Mon Jan 01 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.4-1
 - Update to 0.5.4
 
