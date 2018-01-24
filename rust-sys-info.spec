@@ -5,8 +5,8 @@
 %global crate sys-info
 
 Name:           rust-%{crate}
-Version:        0.5.5
-Release:        2%{?dist}
+Version:        0.5.6
+Release:        1%{?dist}
 Summary:        Get system information in Rust
 
 License:        MIT
@@ -63,6 +63,9 @@ which use %{crate} from crates.io.
 %{cargo_registry}/%{crate}-%{version}/
 
 %changelog
+* Wed Jan 24 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.6-1
+- Update to 0.5.6
+
 * Mon Jan 08 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.5-2
 - Rebuild for rust-packaging v5
 
