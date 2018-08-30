@@ -49,12 +49,11 @@ which use %{crate} from crates.io.
 %if %{with check}
 %check
 # https://github.com/FillZpp/sys-info-rs/issues/25
-%cargo_test \
-  %ifarch ppc64 ppc64le
-    || :
-  %else
-    ;
-  %endif
+%ifarch ppc64 ppc64le
+%cargo_test || :
+%else
+%cargo_test
+%endif
 %endif
 
 %files          devel
