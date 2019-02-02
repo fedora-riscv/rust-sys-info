@@ -6,7 +6,7 @@
 
 Name:           rust-%{crate}
 Version:        0.5.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Get system information in Rust
 
 License:        MIT
@@ -62,6 +62,9 @@ which use %{crate} from crates.io.
 %{cargo_registry}/%{crate}-%{version}/
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.6-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
