@@ -13,6 +13,8 @@ Summary:        Get system information in Rust
 License:        MIT
 URL:            https://crates.io/crates/sys-info
 Source:         %{crates_source}
+# https://github.com/FillZpp/sys-info-rs/pull/44
+Patch0001:      0001-Cast-gethostname-arguments-to-a-proper-type.patch
 
 ExclusiveArch:  %{rust_arches}
 %if %{__cargo_skip_build}
@@ -28,7 +30,6 @@ Get system information in Rust.}
 
 %package        devel
 Summary:        %{summary}
-Requires:       /usr/bin/hostname
 BuildArch:      noarch
 
 %description    devel %{_description}
@@ -68,7 +69,7 @@ which use "default" feature of "%{crate}" crate.
 
 %if %{with check}
 %check
-%cargo_test -- -- --skip test::test_hostname
+%cargo_test
 %endif
 
 %changelog

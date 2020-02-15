@@ -1,0 +1,27 @@
+From f7c398680b57b3fce0584314ac255e45ef1bd932 Mon Sep 17 00:00:00 2001
+From: Igor Raits <i.gnatenko.brain@gmail.com>
+Date: Sat, 15 Feb 2020 11:38:40 +0100
+Subject: [PATCH] Cast gethostname() arguments to a proper type
+
+Closes: https://github.com/FillZpp/sys-info-rs/issues/43
+Signed-off-by: Igor Raits <i.gnatenko.brain@gmail.com>
+---
+ lib.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib.rs b/lib.rs
+index b26bb9f..8bb1891 100644
+--- a/lib.rs
++++ b/lib.rs
+@@ -395,7 +395,7 @@ pub fn hostname() -> Result<String, Error> {
+         unsafe {
+             let buf_size = libc::sysconf(libc::_SC_HOST_NAME_MAX) as usize;
+             let mut buf = Vec::<u8>::with_capacity(buf_size + 1);
+-            if libc::gethostname(buf.as_mut_ptr() as *mut i8, buf_size) < 0 {
++            if libc::gethostname(buf.as_mut_ptr() as *mut libc::c_char, buf_size) < 0 {
+                 return Err(Error::IO(io::Error::last_os_error()));
+             }
+             let hostname_len = libc::strnlen(buf.as_ptr() as *const i8, buf_size);
+-- 
+2.25.0
+
