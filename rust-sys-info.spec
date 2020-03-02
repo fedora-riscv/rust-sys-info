@@ -5,7 +5,7 @@
 %global crate sys-info
 
 Name:           rust-%{crate}
-Version:        0.5.9
+Version:        0.5.10
 Release:        1%{?dist}
 Summary:        Get system information in Rust
 
@@ -13,8 +13,6 @@ Summary:        Get system information in Rust
 License:        MIT
 URL:            https://crates.io/crates/sys-info
 Source:         %{crates_source}
-# https://github.com/FillZpp/sys-info-rs/pull/44
-Patch0001:      0001-Cast-gethostname-arguments-to-a-proper-type.patch
 
 ExclusiveArch:  %{rust_arches}
 %if %{__cargo_skip_build}
@@ -73,6 +71,9 @@ which use "default" feature of "%{crate}" crate.
 %endif
 
 %changelog
+* Mon Mar 02 09:07:49 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.5.10-1
+- Update to 0.5.10
+
 * Sat Feb 15 11:01:51 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.5.9-1
 - Update to 0.5.9
 
