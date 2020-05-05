@@ -5,7 +5,7 @@
 %global crate sys-info
 
 Name:           rust-%{crate}
-Version:        0.5.10
+Version:        0.6.1
 Release:        1%{?dist}
 Summary:        Get system information in Rust
 
@@ -71,6 +71,9 @@ which use "default" feature of "%{crate}" crate.
 %endif
 
 %changelog
+* Tue May 05 2020 Josh Stone <jistone@redhat.com> - 0.6.1-1
+- Update to 0.6.1
+
 * Mon Mar 02 09:07:49 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.5.10-1
 - Update to 0.5.10
 
