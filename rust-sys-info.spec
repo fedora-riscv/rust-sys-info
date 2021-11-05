@@ -6,7 +6,7 @@
 
 Name:           rust-%{crate}
 Version:        0.9.0
-Release:        2%{?dist}
+Release:        %autorelease
 Summary:        Get system information in Rust
 
 # Upstream license specification: MIT
@@ -73,70 +73,4 @@ which use "default" feature of "%{crate}" crate.
 %endif
 
 %changelog
-* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
-
-* Thu May 27 2021 Fabio Valentini <decathorpe@gmail.com> - 0.9.0-1
-- Update to version 0.9.0.
-- Fixes RHBZ#1920136
-
-* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
-
-* Sun Sep 20 2020 Fabio Valentini <decathorpe@gmail.com> - 0.7.0-1
-- Update to version 0.7.0.
-
-* Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-3
-- Second attempt - Rebuilt for
-  https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
-
-* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
-
-* Tue May 05 2020 Josh Stone <jistone@redhat.com> - 0.6.1-1
-- Update to 0.6.1
-
-* Mon Mar 02 09:07:49 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.5.10-1
-- Update to 0.5.10
-
-* Sat Feb 15 11:01:51 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 0.5.9-1
-- Update to 0.5.9
-
-* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.8-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
-
-* Wed Sep 11 10:24:11 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.8-1
-- Update to 0.5.8
-
-* Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.7-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
-
-* Fri May 31 2019 Josh Stone <jistone@redhat.com> - 0.5.7-1
-- Update to 0.5.7
-
-* Sat Mar 09 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.6-5
-- Adapt to new packaging
-
-* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.6-4
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
-
-* Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.6-3
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
-
-* Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.6-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
-
-* Wed Jan 24 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.6-1
-- Update to 0.5.6
-
-* Mon Jan 08 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.5-2
-- Rebuild for rust-packaging v5
-
-* Fri Jan 05 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.5-1
-- Update to 0.5.5
-
-* Mon Jan 01 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.4-1
-- Update to 0.5.4
-
-* Mon Dec 04 2017 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.5.3-1
-- Initial package
+%autochangelog
