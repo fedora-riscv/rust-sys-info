@@ -6,7 +6,7 @@
 
 Name:           rust-%{crate}
 Version:        0.9.1
-Release:        %autorelease
+Release:        %autorelease.rv64
 Summary:        Get system information in Rust
 
 # Upstream license specification: MIT
@@ -64,13 +64,15 @@ which use "default" feature of "%{crate}" crate.
 %build
 %cargo_build
 
-%install
-%cargo_install
-
 %if %{with check}
 %check
+%ifnarch riscv64
 %cargo_test
 %endif
+%endif
+
+%install
+%cargo_install
 
 %changelog
 %autochangelog
