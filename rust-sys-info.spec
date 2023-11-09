@@ -6,7 +6,7 @@
 
 Name:           rust-sys-info
 Version:        0.9.1
-Release:        %autorelease.rv64
+Release:        rv64.%autorelease
 Summary:        Get system information in Rust
 
 License:        MIT
